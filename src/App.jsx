@@ -46,7 +46,10 @@ function App() {
               {articoli.map((articolo, index) => {
                 return (
                   <li className="list-group-item" key={index}>
-                    {articolo}
+                    <div className="d-flex justify-content-between">
+                      <div>{articolo}</div>
+                      <div><button className="btn btn-danger">X</button></div>
+                    </div>
                   </li>
                 );
               })}
