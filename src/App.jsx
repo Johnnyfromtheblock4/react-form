@@ -13,9 +13,13 @@ const articoliBorsa = [
 
 function App() {
   const [nuovoArticolo, setNuovoArticolo] = useState("");
+  const [articoli, setArticoli] = useState(articoliBorsa);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const nuovoArticoliBorsa = [...articoli, nuovoArticolo];
+    setArticoli(nuovoArticoliBorsa);
   };
   return (
     <>
@@ -27,7 +31,7 @@ function App() {
           </div>
           <div className="col-12">
             <ul className="list-unstyled list-group">
-              {articoliBorsa.map((articolo, index) => {
+              {articoli.map((articolo, index) => {
                 return (
                   <li className="list-group-item" key={index}>
                     {articolo}
