@@ -19,10 +19,20 @@ function App() {
   const handleSubmit = (e) => {
     // prevengo il refresh della pagina
     e.preventDefault();
+
+    // La deep copy equivale a questo:
+    // const nuovoArticoliBorsa = []
+    // for (let i = 0; i < articoli.length; i++) {
+    //   nuovoArticoliBorsa.push(articoli[i])
+    // }
+    // nuovoArticoliBorsa.push(nuovoArticoliBorsa)
+
     // eseguo la deep copy
     const nuovoArticoliBorsa = [...articoli, nuovoArticolo];
     setArticoli(nuovoArticoliBorsa);
+    setNewArticle("");
   };
+
   return (
     <>
       <h1 className="text-center my-4">Articoli Borsa da Calcio</h1>
