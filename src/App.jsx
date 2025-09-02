@@ -31,6 +31,18 @@ function App() {
               })}
             </ul>
           </div>
+          <div className="col-12">
+            <form>
+              <div className="d-flex">
+                <input
+                  type="text"
+                  className="form-control me-2"
+                  placeholder="Inserisci articolo"
+                />
+                <button className="btn btn-primary">INSERISCI</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </>
