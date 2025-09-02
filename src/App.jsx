@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const articoliBorsa = [
   "Calzettoni",
   "Scarpe",
@@ -9,9 +11,8 @@ const articoliBorsa = [
   "Calze",
 ];
 
-import { useState } from "react";
-
 function App() {
+  const [nuovoArticolo, setNuovoArticolo] = useState("");
   return (
     <>
       <h1 className="text-center my-4">Articoli Borsa da Calcio</h1>
@@ -31,13 +32,15 @@ function App() {
               })}
             </ul>
           </div>
-          <div className="col-12">
+          <div className="col-12 mt-3">
             <form>
               <div className="d-flex">
                 <input
                   type="text"
                   className="form-control me-2"
                   placeholder="Inserisci articolo"
+                  value={nuovoArticolo}
+                  onChange={(e) => setNuovoArticolo(e.target.value)}
                 />
                 <button className="btn btn-primary">INSERISCI</button>
               </div>
