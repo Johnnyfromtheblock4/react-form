@@ -13,9 +13,11 @@ const articoliBorsa = [
 
 function App() {
   const [nuovoArticolo, setNuovoArticolo] = useState("");
+  // creo un nuovo array che contine anche il nuovo articolo
   const [articoli, setArticoli] = useState(articoliBorsa);
 
   const handleSubmit = (e) => {
+    // prevengo il refresh della pagina
     e.preventDefault();
     // eseguo la deep copy
     const nuovoArticoliBorsa = [...articoli, nuovoArticolo];
