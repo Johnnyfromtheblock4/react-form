@@ -21,9 +21,13 @@ function App() {
             <h4>Lista Articoli</h4>
           </div>
           <div className="col-12">
-            <ul className="list-unstyled">
+            <ul className="list-unstyled list-group">
               {articoliBorsa.map((articolo, index) => {
-                return <li key={index}>{articolo}</li>;
+                return (
+                  <li className="list-group-item" key={index}>
+                    {articolo}
+                  </li>
+                );
               })}
             </ul>
           </div>
