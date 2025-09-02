@@ -13,6 +13,10 @@ const articoliBorsa = [
 
 function App() {
   const [nuovoArticolo, setNuovoArticolo] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <h1 className="text-center my-4">Articoli Borsa da Calcio</h1>
@@ -33,12 +37,12 @@ function App() {
             </ul>
           </div>
           <div className="col-12 mt-3">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="d-flex">
                 <input
                   type="text"
                   className="form-control me-2"
-                  placeholder="Inserisci articolo"
+                  placeholder="Inserisci nuovo articolo"
                   value={nuovoArticolo}
                   onChange={(e) => setNuovoArticolo(e.target.value)}
                 />
