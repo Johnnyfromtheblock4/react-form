@@ -17,7 +17,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    // eseguo la deep copy
     const nuovoArticoliBorsa = [...articoli, nuovoArticolo];
     setArticoli(nuovoArticoliBorsa);
   };
