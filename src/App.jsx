@@ -33,6 +33,15 @@ function App() {
     setNewArticle("");
   };
 
+  // metodo per la cancellazione
+  const eliminaArticolo = (index) => {
+    const nuoviArticoli = articoli.filter((articolo, i) => {
+      return i !== index;
+    });
+
+    setArticoli(nuoviArticoli);
+  };
+
   return (
     <>
       <h1 className="text-center my-4">Articoli Borsa da Calcio</h1>
@@ -48,7 +57,14 @@ function App() {
                   <li className="list-group-item" key={index}>
                     <div className="d-flex justify-content-between">
                       <div>{articolo}</div>
-                      <div><button className="btn btn-danger">X</button></div>
+                      <div>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => eliminaArticolo(index)}
+                        >
+                          X
+                        </button>
+                      </div>
                     </div>
                   </li>
                 );
